@@ -124,5 +124,7 @@ Or download it directly from GitHub as a ZIP and extract it.
 
 ## Demo
 
-https://github.com/user-attachments/assets/79a0d1ea-022a-412d-84d7-ce09cb6876bd
+<p align="center">
+  <video src="https://github.com/user-attachments/assets/79a0d1ea-022a-412d-84d7-ce09cb6876bd" width="300" controls></video>
+</p>
 
