@@ -54,7 +54,7 @@ app/src/main/
 
 ---
 
-## ⚙️ Running the Project
+## ⚙️ Setting up the Project
 
 ### 1. Install Android Studio
 
