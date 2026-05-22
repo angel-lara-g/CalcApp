@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    strings.xml - String resources for CalcApp.
+
+    This file centralizes all user-facing text in the app.
+    Using string resources instead of hardcoded text allows for:
+      - Easy localization (translation to other languages)
+      - Consistent naming across the entire app
+      - Simple updates from a single location
+
+    The app_name string is used by:
+      - AndroidManifest.xml (android:label) to set the name shown
+        under the app icon on the device home screen and app drawer.
+      - The app title bar (if visible).
+-->
+
+<resources>
+
+    <!-- The name displayed under the app icon on the device -->
+    <string name="app_name">CalcApp</string>
+
+</resources>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    themes.xml - Theme resources for CalcApp.
+
+    This file defines the visual theme applied to the entire application.
+    The theme is referenced in AndroidManifest.xml via android:theme="@style/Theme.MyAppli"
+    and affects the overall appearance of all activities.
+
+    Current theme: Theme.MyAppli
+      - Parent: android:Theme.Material.Light.NoActionBar
+          · Material.Light  → applies a light color scheme as the base style
+          · NoActionBar     → hides the default top action bar, giving the
+                              calculator a clean full-screen look without
+                              a title bar at the top.
+
+    To customize the app's appearance further (e.g. status bar color,
+    button styles, typography), additional style attributes can be
+    added inside the Theme.MyAppli style block below.
+-->
+
+<resources>
+
+    <!-- Main application theme: light Material theme without an action bar -->
+    <style name="Theme.MyAppli" parent="android:Theme.Material.Light.NoActionBar" />
+
+</resources>

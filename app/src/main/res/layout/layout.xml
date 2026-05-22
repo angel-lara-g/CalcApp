@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    layout.xml - Main calculator screen layout for CalcApp.
+
+    This layout uses a ConstraintLayout as the root container with a black background.
+    It displays a grid of circular buttons (0-9, operators, AC and =) and a TextView
+    at the top to show the current expression and result.
+
+    The circular button shape is defined in res/drawable/circleb.xml.
+    The "Chewy" font used on all buttons is loaded from res/font/chewy.xml.
+
+    All buttons call the "calcular" method in MainActivity.kt via android:onClick.
+-->
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".MainActivity"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="-21dp">
+
+    <!-- ======================================================
+         RESULT DISPLAY
+         TextView that shows the current expression and result.
+         Positioned near the top-right of the screen.
+    ====================================================== -->
+    <TextView
+        android:id="@+id/tvRes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textColor="@color/white"
+        android:textSize="56sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.912"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.146" />
+
+    <!-- ======================================================
+         ROW 1 — Numbers: 7, 8, 9 and AC (clear)
+    ====================================================== -->
+
+    <!-- Button: 7 -->
+    <Button
+        android:id="@+id/button_7"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:background="@drawable/circleb"
+        android:backgroundTint="@color/white"
+        android:fontFamily="@font/chewy"
+        android:onClick="calcular"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:padding="0dp"
+        android:text="7"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.107"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.417" />
+
+    <!-- Button: 8 -->
+    <Button
+        android:id="@+id/button_8"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:background="@drawable/circleb"
+        android:backgroundTint="@color/white"
+        android:fontFamily="@font/chewy"
+        android:onClick="calcular"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:padding="0dp"
+        android:text="8"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.369"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.417" />
+
+    <!-- Button: 9 -->
+    <Button
+        android:id="@+id/button_9"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:background="@drawable/circleb"
+        android:backgroundTint="@color/white"
+        android:fontFamily="@font/chewy"
+        android:onClick="calcular"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:padding="0dp"
+        android:text="9"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.633"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.417" />
+
+    <!-- Button: AC — Clears the display and resets to 0 -->
+    <Button
+        android:id="@+id/button_AC"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:background="@drawable/circleb"
+        android:fontFamily="@font/chewy"
+        android:onClick="calcular"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:padding="0dp"
+        android:text="AC"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.898"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.417" />
+
+    <!-- ======================================================
+         ROW 2 — Numbers: 4, 5, 6 and + (addition)
+    ====================================================== -->
+
+    <!-- Button: 4 -->
+    <Button
+        android:id="@+id/button_4"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:background="@drawable/circleb"
+        android:backgroundTint="@color/white"
+        android:fontFamily="@font/chewy"
+        android:onClick="calcular"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:padding="0dp"
+        android:text="4"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.11"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.548" />
+
+    <!-- Button: 5 -->
+    <Button
+        android:id="@+id/button_5"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:background="@drawable/circleb"
+        android:backgroundTint="@color/white"
+        android:fontFamily="@font/chewy"
+        android:onClick="calcular"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:padding="0dp"
+        android:text="5"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.372"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.548" />
+
+    <!-- Button: 6 -->
+    <Button
+        android:id="@+id/button_6"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:background="@drawable/circleb"
+        android:backgroundTint="@color/white"
+        android:fontFamily="@font/chewy"
+        android:onClick="calcular"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:padding="0dp"
+        android:text="6"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.636"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.548" />
+
+    <!-- Button: + (Addition operator) -->
+    <Button
+        android:id="@+id/button_SUM"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:background="@drawable/circleb"
+        android:fontFamily="@font/chewy"
+        android:onClick="calcular"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:padding="0dp"
+        android:text="+"
+        android:textColor="@color/white"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.901"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.548" />
+
+    <!-- ======================================================
+         ROW 3 — Numbers: 1, 2, 3 and - (subtraction)
+    ====================================================== -->
+
+    <!-- Button: 1 -->
+    <Button
+        android:id="@+id/button_1"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:background="@drawable/circleb"
+        android:backgroundTint="@color/white"
+        android:fontFamily="@font/chewy"
+        android:onClick="calcular"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:padding="0dp"
+        android:text="1"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.107"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.679" />
+
+    <!-- Button: 2 -->
+    <Button
+        android:id="@+id/button_2"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:background="@drawable/circleb"
+        android:backgroundTint="@color/white"
+        android:fontFamily="@font/chewy"
+        android:onClick="calcular"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:padding="0dp"
+        android:text="2"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.369"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.679" />
+
+    <!-- Button: 3 -->
+    <Button
+        android:id="@+id/button_3"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:background="@drawable/circleb"
+        android:backgroundTint="@color/white"
+        android:fontFamily="@font/chewy"
+        android:onClick="calcular"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:padding="0dp"
+        android:text="3"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.633"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.679" />
+
+    <!-- Button: - (Subtraction operator) -->
+    <Button
+        android:id="@+id/button_RES"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:background="@drawable/circleb"
+        android:fontFamily="@font/chewy"
+        android:onClick="calcular"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:padding="0dp"
+        android:text="-"
+        android:textColor="@color/white"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.898"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.679" />
+
+    <!-- ======================================================
+         ROW 4 — Numbers: 0, / (division), * (multiplication) and = (equals)
+    ====================================================== -->
+
+    <!-- Button: 0 -->
+    <Button
+        android:id="@+id/button_0"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:background="@drawable/circleb"
+        android:backgroundTint="@color/white"
+        android:fontFamily="@font/chewy"
+        android:onClick="calcular"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:padding="0dp"
+        android:text="0"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.101"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.807" />
+
+    <!-- Button: / (Division operator) -->
+    <Button
+        android:id="@+id/button_DIV"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:background="@drawable/circleb"
+        android:fontFamily="@font/chewy"
+        android:onClick="calcular"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:padding="0dp"
+        android:text="/"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.369"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.807" />
+
+    <!-- Button: * (Multiplication operator) -->
+    <Button
+        android:id="@+id/button_MULT"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:background="@drawable/circleb"
+        android:fontFamily="@font/chewy"
+        android:onClick="calcular"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:padding="0dp"
+        android:text="*"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.636"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.81" />
+
+    <!-- Button: = (Evaluate expression and show result) -->
+    <Button
+        android:id="@+id/button_IGUAL"
+        android:layout_width="74dp"
+        android:layout_height="77dp"
+        android:background="@drawable/circleb"
+        android:fontFamily="@font/chewy"
+        android:onClick="calcular"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:padding="0dp"
+        android:text="="
+        android:textColor="@color/white"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.902"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.81" />
+
+    <!-- ======================================================
+         BUTTON GROUP
+         Groups all calculator buttons for easy visibility toggling.
+         Useful during development to show/hide all buttons at once.
+    ====================================================== -->
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="button_4,button_2,button_9,button_MULT,button_AC,button_RES,button_7,button_1,button_8,button_6,button_IGUAL,button_3,button_SUM,button_5,button_DIV,button_0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

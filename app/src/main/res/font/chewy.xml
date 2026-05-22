@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    chewy.xml - Font family definition for the "Chewy" typeface used in CalcApp.
+
+    This file configures a downloadable font provided by Google Fonts via
+    Google Play Services (GMS). Instead of bundling the font file directly
+    in the app, Android downloads it at runtime from the Google Fonts provider.
+
+    The font is referenced in layout.xml using:
+        android:fontFamily="@font/chewy"
+
+    It is also declared in res/values/preloaded_fonts.xml so that Android
+    can pre-fetch and cache it before the app launches, avoiding any delay
+    or fallback to the default font on first run.
+
+    Requirements:
+      - Device must have Google Play Services installed (standard on most Android devices).
+      - The font provider certificates are declared in res/values/font_certs.xml
+        and referenced here via @array/com_google_android_gms_fonts_certs.
+-->
+
+<font-family xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:fontProviderAuthority="com.google.android.gms.fonts"
+    app:fontProviderPackage="com.google.android.gms"
+    app:fontProviderQuery="Chewy"
+    app:fontProviderCerts="@array/com_google_android_gms_fonts_certs">
+
+    <!--
+        No font items are declared here because the font is fetched
+        dynamically from Google's font provider at runtime.
+        The attributes above identify:
+          - fontProviderAuthority: the content provider that serves the font
+          - fontProviderPackage:   the package that owns the provider (Google Play Services)
+          - fontProviderQuery:     the exact font name to request ("Chewy")
+          - fontProviderCerts:     certificate fingerprints to verify the provider's identity
+    -->
+
+</font-family>

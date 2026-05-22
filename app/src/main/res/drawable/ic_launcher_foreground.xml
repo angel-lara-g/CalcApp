@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    ic_launcher_foreground.xml - Foreground layer of the CalcApp adaptive launcher icon.
+
+    This file draws a calculator symbol centered on the 108dp x 108dp canvas.
+    It is displayed on top of ic_launcher_background.xml to form the full app icon.
+
+    The icon consists of:
+      - A rounded rectangle representing the calculator body (white fill, purple stroke)
+      - A display bar at the top of the calculator body
+      - A 3x4 grid of small rounded squares representing the calculator buttons
+
+    Android adaptive icons use a 108dp canvas but only the inner 72dp circle
+    is guaranteed to be visible across all launchers and device shapes.
+    All shapes in this file are kept within the safe zone.
+
+    Referenced in: res/mipmap-anydpi-v26/ic_launcher.xml
+-->
+
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Calculator body: white rounded rectangle centered on the canvas -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M36,22 Q36,18 40,18 L68,18 Q72,18 72,22 L72,86 Q72,90 68,90 L40,90 Q36,90 36,86 Z" />
+
+    <!-- Calculator display bar: purple rounded rectangle at the top of the body -->
+    <path
+        android:fillColor="#D29BFD"
+        android:pathData="M40,24 L68,24 L68,38 L40,38 Z" />
+
+    <!-- ======================================================
+         BUTTON GRID
+         3 columns x 4 rows of small rounded squares representing
+         the calculator keypad. Color alternates between purple
+         (operator keys) and dark gray (number keys).
+    ====================================================== -->
+
+    <!-- Row 1 -->
+    <path android:fillColor="#D29BFD" android:pathData="M40,42 Q39,42 39,43 L39,49 Q39,50 40,50 L46,50 Q47,50 47,49 L47,43 Q47,42 46,42 Z" />
+    <path android:fillColor="#888888" android:pathData="M51,42 Q50,42 50,43 L50,49 Q50,50 51,50 L57,50 Q58,50 58,49 L58,43 Q58,42 57,42 Z" />
+    <path android:fillColor="#D29BFD" android:pathData="M62,42 Q61,42 61,43 L61,49 Q61,50 62,50 L68,50 Q69,50 69,49 L69,43 Q69,42 68,42 Z" />
+
+    <!-- Row 2 -->
+    <path android:fillColor="#888888" android:pathData="M40,53 Q39,53 39,54 L39,60 Q39,61 40,61 L46,61 Q47,61 47,60 L47,54 Q47,53 46,53 Z" />
+    <path android:fillColor="#888888" android:pathData="M51,53 Q50,53 50,54 L50,60 Q50,61 51,61 L57,61 Q58,61 58,60 L58,54 Q58,53 57,53 Z" />
+    <path android:fillColor="#888888" android:pathData="M62,53 Q61,53 61,54 L61,60 Q61,61 62,61 L68,61 Q69,61 69,60 L69,54 Q69,53 68,53 Z" />
+
+    <!-- Row 3 -->
+    <path android:fillColor="#888888" android:pathData="M40,64 Q39,64 39,65 L39,71 Q39,72 40,72 L46,72 Q47,72 47,71 L47,65 Q47,64 46,64 Z" />
+    <path android:fillColor="#888888" android:pathData="M51,64 Q50,64 50,65 L50,71 Q50,72 51,72 L57,72 Q58,72 58,71 L58,65 Q58,64 57,64 Z" />
+    <path android:fillColor="#888888" android:pathData="M62,64 Q61,64 61,65 L61,71 Q61,72 62,72 L68,72 Q69,72 69,71 L69,65 Q69,64 68,64 Z" />
+
+    <!-- Row 4 -->
+    <path android:fillColor="#888888" android:pathData="M40,75 Q39,75 39,76 L39,82 Q39,83 40,83 L46,83 Q47,83 47,82 L47,76 Q47,75 46,75 Z" />
+    <path android:fillColor="#888888" android:pathData="M51,75 Q50,75 50,76 L50,82 Q50,83 51,83 L57,83 Q58,83 58,82 L58,76 Q58,75 57,75 Z" />
+    <!-- Equals button: purple, wider to span last position -->
+    <path android:fillColor="#D29BFD" android:pathData="M62,75 Q61,75 61,76 L61,82 Q61,83 62,83 L68,83 Q69,83 69,82 L69,76 Q69,75 68,75 Z" />
+
+</vector>

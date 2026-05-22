@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    circleb.xml - Circular button background drawable for CalcApp.
+
+    This drawable defines an oval (circle) shape used as the background
+    for all calculator buttons in layout.xml.
+
+    The fill color (#D29BFD) is a soft purple, used as the default
+    background for operator buttons (AC, +, -, *, /, =).
+    Number buttons override this color with white using android:backgroundTint
+    directly in the layout.
+
+    Size is set to 50dp x 50dp as a base; the actual button size is
+    controlled by android:layout_width and android:layout_height in the layout.
+-->
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+
+    <!-- Fill color: soft purple used for operator buttons -->
+    <solid android:color="#D29BFD" />
+
+    <!-- Base size of the circle shape -->
+    <size
+        android:height="50dp"
+        android:width="50dp" />
+
+</shape>

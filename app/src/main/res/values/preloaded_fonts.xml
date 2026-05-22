@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    preloaded_fonts.xml - Declares fonts to be pre-fetched before the app launches.
+
+    This file is used by Android's font pre-loading mechanism to request
+    downloadable fonts from the font provider (Google Fonts via Google Play Services)
+    before the app starts, so they are available immediately when the UI renders.
+
+    Without pre-loading, a downloadable font might not be ready on the first launch,
+    causing the app to fall back to the default system font temporarily.
+
+    The fonts listed here must match the font family files defined in res/font/.
+    In this case, @font/chewy corresponds to res/font/chewy.xml.
+
+    This array is referenced in AndroidManifest.xml inside a <meta-data> tag:
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+-->
+
+<resources>
+
+    <!-- List of fonts to pre-load at app startup -->
+    <array name="preloaded_fonts" translatable="false">
+
+        <!-- Chewy: the rounded playful font used on all calculator buttons -->
+        <item>@font/chewy</item>
+
+    </array>
+
+</resources>
